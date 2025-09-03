@@ -4,23 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7206f46-a944-41d6-939d-dfb2f7b317ab" name="Changes" comment="RZ~ Initialize">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/entity/BankAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/entity/BankBranch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/entity/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/entity/Inventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/entity/Invoice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/entity/InvoiceItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/entity/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/entity/StoreBranch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/entity/UserBranch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/enums/BankName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/enums/Sex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/repository/CrudRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/service/PersonService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/tools/JpaProvider.java" afterDir="false" />
+    <list default="true" id="f7206f46-a944-41d6-939d-dfb2f7b317ab" name="Changes" comment="RZ~ ER Diagram">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/exception/AlreadyExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/exception/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/service/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/servlet/PersonServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/servlet/SimCardServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mftplus/model/repository/CrudRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/repository/CrudRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mftplus/model/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mftplus/model/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +24,25 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Roozbehyo&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Roozbehyo/Sales-System.git&quot;,
+    &quot;accountId&quot;: &quot;7b35a43c-3c9f-4c7f-abf5-c63e749c9af0&quot;
+  }
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -59,7 +65,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/projects/Java/java-ee-mesbah/Sales-System/src/main/java/com/mftplus/model&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/projects/Java/java-ee-mesbah/Sales-System/src/main/java/com/mftplus&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -75,9 +81,12 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\Java\java-ee-mesbah\Sales-System\src\main\java\com\mftplus" />
       <recent name="D:\projects\Java\java-ee-mesbah\Sales-System\src\main\java\com\mftplus\model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mftplus.exception" />
+      <recent name="com.mftplus.model.service" />
       <recent name="com.mftplus.model.entity" />
     </key>
   </component>
@@ -190,6 +199,9 @@
       <workItem from="1756752976534" duration="17717000" />
       <workItem from="1756806419930" duration="7752000" />
       <workItem from="1756820608004" duration="1237000" />
+      <workItem from="1756825216521" duration="33000" />
+      <workItem from="1756825363106" duration="4298000" />
+      <workItem from="1756925263927" duration="8038000" />
     </task>
     <task id="LOCAL-00001" summary="RZ~ Initialize">
       <option name="closed" value="true" />
@@ -207,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756807646585</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="RZ~ ER Diagram">
+      <option name="closed" value="true" />
+      <created>1756823456528</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1756823456529</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +246,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="RZ~ Initialize" />
-    <option name="LAST_COMMIT_MESSAGE" value="RZ~ Initialize" />
+    <MESSAGE value="RZ~ ER Diagram" />
+    <option name="LAST_COMMIT_MESSAGE" value="RZ~ ER Diagram" />
   </component>
 </project>

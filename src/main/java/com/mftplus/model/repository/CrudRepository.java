@@ -1,10 +1,10 @@
 package com.mftplus.model.repository;
 
+import com.mftplus.model.tools.JpaProvider;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.TypedQuery;
-import mft.simcard.model.tools.JpaProvider;
 
 import java.util.List;
 
