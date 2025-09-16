@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @SuperBuilder
 @Data
@@ -43,4 +44,7 @@ public class Invoice {
     @Column(name = "invoice_total_price", columnDefinition = "number(*)", nullable = false)
     @JsonProperty("InvoiceTotalPrice")
     private int invoiceTotalPrice;
+
+    @OneToMany(mappedBy = "invoice")
+    private List<InvoiceItem> invoiceItems;
 }

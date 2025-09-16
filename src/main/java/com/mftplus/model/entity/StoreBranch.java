@@ -2,11 +2,12 @@ package com.mftplus.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mftplus.model.enums.Sex;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
+
+import java.util.List;
 
 @SuperBuilder
 @Data
@@ -31,5 +32,20 @@ public class StoreBranch {
     @Column(name = "is_deleted", columnDefinition = "number(1)")
     @JsonIgnore
     private boolean isDeleted;
+
+    @OneToMany(mappedBy = "storeBranch")
+    private List<UserBranch> userBranches;
+
+    @OneToMany(mappedBy = "storeBranch")
+    private List<Invoice> invoices;
+
+    @JoinColumn(name = "inventory_id", referencedColumnName = "id",
+            foreignKey = @ForeignKey(name = "fk_branch_inventory"))
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Inventory inventory;
+
+    @OneToMany(mappedBy = "storeBranch")
+    private List<BankBranch> bankBranches;
+
 
 }

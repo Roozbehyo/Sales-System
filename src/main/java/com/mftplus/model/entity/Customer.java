@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.util.List;
+
 @SuperBuilder
 @Data
 @NoArgsConstructor
@@ -39,4 +41,7 @@ public class Customer {
     @Column(name = "sex", columnDefinition = "nvarchar2(6)", nullable = false)
     @JsonProperty("Sex")
     private Sex sex;
+
+    @OneToMany(mappedBy = "customer")
+    private List<Invoice> invoices;
 }

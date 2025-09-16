@@ -8,6 +8,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.util.List;
+
 @SuperBuilder
 @NoArgsConstructor
 @Data
@@ -28,4 +30,12 @@ public class User {
     @JsonProperty("LastName")
     private String familyName;
 
+    @OneToMany(mappedBy = "user")
+    private List<Invoice> invoices;
+
+    @OneToMany(mappedBy = "user")
+    private List<BankAccount> bankAccounts;
+
+    @OneToMany(mappedBy = "user")
+    private List<UserBranch> userBranches;
 }

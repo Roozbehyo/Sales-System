@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.util.List;
+
 @SuperBuilder
 @Data
 @NoArgsConstructor
@@ -30,4 +32,12 @@ public class Product {
     @Column(name = "is_deleted", columnDefinition = "number(1)", nullable = false)
     @JsonIgnore
     private boolean isDeleted;
+
+    @JoinColumn(name = "inventory_id", referencedColumnName = "id",
+            foreignKey = @ForeignKey(name = "fk__product_inventory"))
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Inventory inventory;
+
+    @OneToMany(mappedBy = "product")
+    private List<InvoiceItem> invoiceItem;
 }

@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.util.List;
+
 @SuperBuilder
 @Data
 @NoArgsConstructor
@@ -19,17 +21,14 @@ public class Inventory {
     @JsonIgnore
     private int id;
 
-    @JoinColumn(name = "product_id", referencedColumnName = "id",
-            foreignKey = @ForeignKey(name = "fk_inventory_product"))
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(mappedBy = "inventory")
     @JsonProperty("Product")
-    private Product product;
+    private List<Product> product;
 
-    @JoinColumn(name = "branch_id", referencedColumnName = "id",
-            foreignKey = @ForeignKey(name = "fk_inventory_branch"))
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+
+    @OneToMany(mappedBy = "inventory")
     @JsonProperty("StoreBranch")
-    private StoreBranch storeBranch;
+    private List<StoreBranch> storeBranches;
 
     @Column(name = "balance", columnDefinition = "number(*)", nullable = false)
     @JsonProperty("Balance")

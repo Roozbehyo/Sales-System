@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.util.List;
+
 @SuperBuilder
 @Data
 @NoArgsConstructor
@@ -40,6 +42,9 @@ public class BankAccount {
     @Column(name = "is_deleted", columnDefinition = "number(1)", nullable = false)
     @JsonIgnore
     private boolean isDeleted;
+
+    @OneToMany(mappedBy = "bankAccount")
+    private List<BankBranch> bankBranches;
 
     //TODO--add bank account type like Qarzolhasaneh , one months,etc...
 }

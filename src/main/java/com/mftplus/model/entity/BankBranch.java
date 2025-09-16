@@ -2,7 +2,6 @@ package com.mftplus.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mftplus.model.enums.BankName;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
