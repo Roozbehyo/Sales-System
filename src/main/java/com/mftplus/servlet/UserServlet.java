@@ -2,6 +2,7 @@ package com.mftplus.servlet;
 
 import com.mftplus.model.entity.User;
 import com.mftplus.model.service.Service;
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,10 +11,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class UserServlet extends HttpServlet {
+    @Inject private Service<User> userService;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            Service<User> userService = new Service<>(User.class);
             req.getSession().setAttribute("users", userService.findAll());
             System.out.println("Info : FindAll Persons");
         }
@@ -25,7 +26,6 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            Service<User> userService = new Service<>(User.class);
             User user =
                     User
                             .builder()
@@ -43,7 +43,6 @@ public class UserServlet extends HttpServlet {
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        id,name,family
         try {
-            Service<User> userService = new Service<>(User.class);
             User user =
                     User
                             .builder()
